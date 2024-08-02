@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 3%;
+}
+
+.standard {
+  background-image: linear-gradient(
+    100deg,
+    #584e26,
+    #0f5371
+  );
+  color: #b9e9cb;
+  transition: 0.3s linear;
+  overflow: hidden;
+  font-family: "Annie Use Your Telescope";
+}
+
+.darker {
+  background-image: linear-gradient(
+    100deg,
+    #001214,
+    #001f29
+  );
+  color: white;
+  transition: 0.3s linear;
+  overflow: hidden;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+}
+
+#header,
+#form {
+  margin: 0 1rem;
+  min-height: 10vh;
+  width: 100%;
+}
+
+#header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 3rem;
+  min-height: 25vh;
+  width: 100%;
+}
+
+.flexrow-container {
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3%;
+}
+
+.theme-selector {
+  border: 1px solid #d1dae3;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0 8px;
+}
+
+.theme-selector:hover {
+  box-shadow: white 0 0 10px;
+  cursor: pointer;
+}
+
+.standard-theme {
+  background-image: linear-gradient(
+    100deg,
+    #584e26,
+    #0f5371
+  );
+}
+
+.darker-theme {
+  background-image: linear-gradient(
+    100deg,
+    #001214,
+    #001f29
+  );
+}
+
+#title {
+  border-right: solid 2px;
+  white-space: pre;
+  overflow: hidden;
+  letter-spacing: 0.2rem;
+  margin-top: 3.2rem;
+  margin-bottom: 1.2rem;
+  max-width: 29rem;
+  animation: animated-text 2s steps(10, end) 0.5s,
+    animated-cursor 1000ms steps(10, end) infinite;
+}
+
+#title.darker-title {
+  font-size: 5rem;
+  animation: animated-text 2s steps(10, end) 0.5s,
+    animated-cursor 1000ms steps(10, end) infinite;
+}
+
+@keyframes animated-text {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 30rem;
+  }
+}
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(125, 146, 122, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes darker-animated-cursor {
+  from {
+    border-right-color: #197391;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin: 15px 0;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+form input {
+  padding: 10px;
+  font-size: 1rem;
+  font-style: italic;
+  font-family: "Indie Flower", cursive;
+  border: none;
+  outline: none;
+  border-radius: 15rem;
+  max-width: 30rem;
+  transition: background-color 200ms ease-in-out;
+  width: 100%;
+}
+
+form input.standard-input {
+  background-color: #181a1a;
+  color: rgb(247, 226, 223);
+}
+
+form input.darker-input {
+  background-color: #01394c;
+  color: white;
+}
+
+form input.darker-input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+form input.standard-input:hover {
+  background-color: rgb(188, 144, 68);
+}
+
+form input.darker-input:hover {
+  background-color: #3bb6df;
+}
+
+button {
+  border: none;
+  border-radius: 5rem;
+}
+
+button.standard-button {
+  background-color: rgb(45, 58, 44);
+  color: rgba(83, 130, 134, 0.881);
+  font-style: italic;
+}
+
+button.standard-button:hover {
+  background-color: white;
+  box-shadow: #fff8 0 0 10px;
+}
+
+button.darker-button {
+  background-color: #002837;
+  color: white;
+  font-style: italic;
+}
+
+button.darker-button:hover {
+  background-color: #3bb6df;
+}
+
+form button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5rem;
+  min-width: 8rem;
+}
+
+#myUnOrdList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  width: 50vh;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+/* JS ile Olusturulan Kisim*/
+.todo {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.5em;
+  border-radius: 2rem;
+}
+
+.standard-todo {
+  background-color: rgb(76, 91, 91);
+}
+
+.darker-todo {
+  background-color: #39616ef7;
+}
+
+.todo li {
+  padding: 7px;
+  font-size: 1.5rem;
+  flex: 1;
+  border-radius: 2rem;
+}
+
+.check-btn,
+.delete-btn {
+  font-size: 1rem;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  border-radius: 80%;
+  margin: 0 5px;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transition: 0.5s;
+  transform: translateY(45rem) rotateZ(45deg);
+  opacity: 0;
+}
+
+/* Resposive Part */
+
+@media only screen and (max-width: 1000px) {
+  .flexrow-container {
+    align-self: unset;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #title {
+    animation: animated-text 3.5s steps(16, end) 0.5s 1
+        normal both,
+      animated-cursor 750ms steps(16, end) infinite;
+    max-width: 255px;
+    font-size: 3rem;
+  }
+  #title.darker-title {
+    font-size: 3rem;
+  }
+
+  form {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  form input {
+    border-radius: 17px;
+  }
+
+  form button {
+    border-radius: 15px;
+    margin-top: 15px;
+    width: 50%;
+  }
+}
